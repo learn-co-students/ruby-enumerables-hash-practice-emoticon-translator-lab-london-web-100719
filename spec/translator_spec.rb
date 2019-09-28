@@ -61,7 +61,11 @@ describe "#load_library" do
     end
 
     it "the emoticon keys inside the 'get_emoticon' hash point to their Japanese equivalents" do
-      emoticons = {"O:)" => "☜(⌒▽⌒)☞", ":'(" => "(Ｔ▽Ｔ)", ";)" => "(^_-)"}
+      emoticons = {
+        "O:)" => "☜(⌒▽⌒)☞",
+        ":'(" => "(Ｔ▽Ｔ)",
+        ";)" => "(^_-)"
+      }
       emoticons.each do |english_emoticon,japanese_emoticon|
         if result['get_emoticon'] then
           expect(result['get_emoticon'][english_emoticon]).to eq(japanese_emoticon)
